@@ -1,0 +1,109 @@
+# "Choosers," functions that choose between their arguments
+# 1of2 chooses the first argument (and returns it)
+# 2of2 chooses the second argument (and returns it)
+1of2 = \ x y . x
+2of2 = \ x y . y
+flip = \ chooser . chooser 2of2 1of2
+test = (flip 1of2) a b
+a b 1of2
+
+
+# 1of2 represents 0 and 2of2 represents 1
+mult = \ x y . x 1of2 y
+test2 = mult 1of2 2of2
+test3 = mult 2of2 2of2
+
+mult = \ x y . x 1of2 y
+test 2 1of2 2of2 . 1of2 1of2 2of2  returns 1of2
+test 3 2of2 2of2 . 2of2 1of2 2of2 returns 2of2
+test2 = mult 1of2 2of2
+test3 = mult 2of2 2of2
+
+test2 = mult 1of2 2of2 returns 1of2
+test3 = mult 2of2 2of2 returns 2of2
+
+
+# Define a function called max that takes two "numbers" and returns the
+# largest one
+# (not related to multiply, except that it also uses 1of2 and 2of2 as "numbers")
+
+
+
+max 1of2 1of2 => ? 1of2
+max 1of2 2of2 => ? 2of2
+max 2of2 1of2 => ? 2of2
+max 2of2 2of2 => ? 2of2
+
+
+mult = \ x y . x 1of2 y  multiplies all 3
+
+max = \ x y . y 1of2 2of2 is returning the second one
+
+test4 = max 1of2 1of2  should return 1of2 it does
+test5 = max 1of2 2of2 should return 2of2 it does
+test6 = max 2of2 1of2  should return 2of2 it does not
+test7 = max 2of2 2of2  should return 2of2 it does
+is it always returning second value?
+
+mult = \ x y . x 1of2 y
+
+max = \ x y .  x-y
+0-1  =-1    return 1
+1-0   =1 return 1
+0-0 = 0 return 0
+1-1 = 0 return 1
+
+x>y  1>0
+if multiplied is 1, answer is 1
+if multiplied is 0 could be either
+
+0*1  1
+1*0  0 --
+1*1  1
+0*0  0
+
+0+1  =1    return 1
+1+0   =1 return 1
+0+0 = 0 return 0
+1+1 = 0 return 1
+
+max = \ x y .
+
+mult = \ x y . x 1of2 y
+test 2 1of2 2of2 . 1of2 1of2 2of2  returns 1of2
+test 3 2of2 2of2 . 2of2 1of2 2of2 returns 2of2
+
+test8 = max 1of2 1of2  should return 1of2
+test9 = max 1of2 2of2 should return 2of2
+test10 = max 2of2 1of2  should return 2of2
+test11 = max 2of2 2of2  should return 2of2
+returns both?
+
+max = \ x y . y 1of2 x
+max = \ x y . y y
+
+max = \ x y . x 1of2 y
+test 10 1of2 1of2 . 1of2 1of2 1of2  does 1of2                 should return 1of2
+
+test 11 1of2 2of2 . 1of2 1of2 2of2    does 1of2              should return 2of2
+
+test 12  2of2 1of2 . 2of2 1of2 1of2  does 1of2               should return 2of2
+
+test 13  2of2 2of2 . 2of2 1of2 2of2 does 2of2                should return 2of2
+---
+test 10 1of2 1of2 . 1of2  1of2 1of2        does 1of2                 should return 1of2
+
+test 11 1of2 2of2 . 1of2  2of2  1of2  does 2of2              should return 2of2
+
+test 12  2of2 1of2 . 2of2 1of2  1of2 does 1of2               should return 2of2
+
+test 13  2of2 2of2 . 2of2  2of2 1of2 does 1of2                should return 2of2
+
+000
+test 10 1of2 1of2 . 2of2 1of2  1of2         does 1of2                 should return 1of2
+
+test 11 1of2 2of2 . 2of2 1of2  2of2    does 2of2              should return 2of2
+
+test 12  2of2 1of2 . 2of2 2of2 1of2   does 1of2               should return 2of2
+
+test 13  2of2 2of2 . 2of2 2of2  2of2  does 2of2                should return 2of2

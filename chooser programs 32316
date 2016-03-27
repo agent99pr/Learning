@@ -1,0 +1,18 @@
+# "Choosers," functions that choose between their arguments
+# 1of2 chooses the first argument (and returns it)
+# 2of2 chooses the second argument (and returns it)
+1of2 = \ x y . x
+2of2 = \ x y . y
+flip = \ chooser . chooser 2of2 1of2
+test = (flip 1of2) a b
+# 1of2 represents 0 and 2of2 represents 1
+mult = \ x y . x 1of2 y
+test2 = mult 1of2 2of2
+test3 = mult 2of2 2of2
+# Define a function called max that takes two "numbers" and returns the
+# largest one
+# (not related to multiply, except that it also uses 1of2 and 2of2 as "numbers")
+
+
+
+max = x y . y 10f2 2of2

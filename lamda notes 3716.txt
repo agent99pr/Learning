@@ -1,0 +1,29 @@
+1of2 a b -> a
+
+
+(flip 1of2) a b  -> b
+(flip 2of2) a b -> a
+
+flip = \chooser . (\ X Y . chooser Y X)
+
+dontFlip = \chooser . (\X Y . chooser X Y)
+
+flip 1of2 -> ?????
+
+or    |  true | false
+------+-------+-------
+true  | true  | true
+------+-------+-------
+false | true  | false
+
+
+and   |  true | false
+------+-------+-------
+true  | true  | false
+------+-------+-------
+false | false  | false
+
+true = \x y . x
+false = \x y . y
+not = \bool . \x y . bool y x
+and = \boolX boolY .

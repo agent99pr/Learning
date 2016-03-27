@@ -1,0 +1,18 @@
+
+1of2 = \ x y . x
+2of2 = \ x y . y
+
+
+high = \ x y . x y x
+test20 = high 1of2 1of2
+#. 1of2 1of2 1of2
+# does 1of2                 should return 1of2
+
+test21 = high 1of2 2of2
+#. 1of2 2of2 1of2    does 2of2              should return 2of2
+
+test22 = high 2of2 1of2
+#. 2of2 1of2 2of2  does 2of2               should return 2of2
+
+test23 = high 2of2 2of2
+#. 2of2 2of2 2of2 does 2of2      should return 2of2

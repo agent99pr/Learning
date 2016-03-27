@@ -1,0 +1,23 @@
+
+1of2:  λx y . x
+1of2 a b    ⇒    a
+
+1of2 a b this is calling the function with the values, or running the function,
+ applying the function to the values
+
+flip 1of2 => 2of2
+flip 2of2 => 1of2
+
+2of2 a b => b
+(flip 1of2) a b => b  this is a spec
+
+1of2 = \ x y . x
+2of2 = \ x y . y
+flip = \ chooser . chooser 2of2 1of2
+chooser is a variable that will be given a value, chooser is called a parameter
+test = (flip 1of2) a b
+mult = \ x y . x 1of2 y   calling x with 2 arguments
+test2 = mult 1of2 2of2 => 1of2
+test3 = mult 2of2 2of2 => 2of2
+
+we did minimum program 1 0, write a max program
