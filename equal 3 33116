@@ -1,0 +1,83 @@
+
+equal = \ x y .
+when x is 1of2
+  when y is 1of2 should return 2of2
+  when y is 2of2 should return 1of2
+when x is 2of2
+  when y is 1of2  should return  1of2
+  when y is 2of2  should return 2of2
+
+
+when x is 1of2  should return flip y
+when x is 2of2 it should return y
+
+flip = \ chooser . chooser 2of2 1of2
+
+equal = \ x y . x A B
+
+equal = \ x y . x (flip y) y
+
+1of2 yes no
+x yes no
+
+equal 1of2 2of2
+-----------
+
+eq3 = \ x y z . x (flip y) y wrong
+eq3 = \ x y z . x  y (flip y) wrong
+eq3 = \ x y z . x (flip y) all are wrong except 2 2 1
+eq3 = \ x y z . y (flip y) returns \y . x
+eq3 = \ x y z . (flip y) y  returns \y . y
+
+
+
+eq3 1of2 1of2 2of2
+eq3 1of2 2of2 2of2
+eq3 1of2 2of2 1of2
+eq3 1of2 1of2 1of2
+eq3 2of2 1of2 2of2
+eq3 2of2 2of2 2of2
+eq3 2of2 1of2 1of2
+eq3 2of2 2of2 1of2
+
+#when x is 1of2 returns y or flip y
+#when x is 2of2 returns y or flip y
+
+
+#test equal 1of2 2of2 works
+
+assignment:
+#eq3 a b c returns whether all 3 are equal
+
+#eq3 = \ x y z . x
+#eq3 1of2 1of2 2of2    y
+#eq3 1of2 1of2 1of1  flip y
+#eq3 1of2 2of2 2of2  flip y
+#eq3 1of2 2of2 1of2  flip y
+#eq3 2of2 1of2 2of2  y
+#eq3 2of2 1of2 1of2   y
+#eq3 2of2 2of2 2of2   y
+#eq3 2of2 2of2 1of2  flip y
+
+
+
+
+#when x is 1of2
+  #when y and z are 1of2 should return 2of2   1 1 1 sb 2  flip y flip z
+  #when y and z have 2of2 should return 1of2  1 1 2 sb 1  1 2 1 sb 1  1 2 2 sb 1
+#when x is 2of2
+  #when y and z are 2of2 should return 2of2
+  #when y and z have 1of2 should return 1of2
+
+  #when x is 1of2
+    #when y is 1of2 and z is 1of2 should return 2of2   1 1 1  2  flip y or flip z
+    #when y is 1of2 and z is 2of2 should return 1of2   1 1 2  1  x or y or flip z
+    #when y is 2of2 and z is 1of2 should return 1of2   1 2 1  1  flip x or flip y or z
+    #when y is 2of2 and z is 2of2 should return 1of2   1 2 2  1  flip y or flip z
+
+
+  #when x is 2of2
+    #when y is 1of2 and z is 1of2 should return 2of2   2 1 1  1  flip x or y or z
+    #when y is 1of2 and z is 2of2 should return 1of2   2 1 2  1  x or y or flip z
+    #when y is 2of2 and z is 1of2 should return 1of2   2 2 1  1  flip x or flip y or z
+    #when y is 2of2 and z is 2of2 should return 1of2   2 2 2  2  x or y or z

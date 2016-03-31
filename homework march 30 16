@@ -1,0 +1,9 @@
+
+new problems
+eq3 a b c returns whether all 3 are equal
+mult is the same as min
+
+maxOrMin which (chooser) a b returns, using which, returns max or min
+
+maxorMin 1of2 a b returns min a b
+maxorMin 2of2 a b returns max a b

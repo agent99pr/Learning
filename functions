@@ -1,0 +1,22 @@
+
+
+1of2 = \ x y . x
+2of2 = \ x y . y
+flip = \ chooser . chooser 2of2 1of2
+
+equal = \ x y . x (flip y) y
+max = x y . y 10f2 2of2
+
+
+mult = \ x y . x 1of2 y  #also min
+
+eq3 = \ x y z . (flip y) y
+
+eq3 1of2 1of2 2of2
+eq3 1of2 2of2 2of2
+eq3 1of2 2of2 1of2
+eq3 1of2 1of2 1of2
+eq3 2of2 1of2 2of2
+eq3 2of2 2of2 2of2
+eq3 2of2 1of2 1of2
+eq3 2of2 2of2 1of2

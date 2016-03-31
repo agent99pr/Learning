@@ -14,5 +14,5 @@ test3 = mult 2of2 2of2
 # (not related to multiply, except that it also uses 1of2 and 2of2 as "numbers")
 
 
-
+equal = \ x y . x (flip y) y
 max = x y . y 10f2 2of2

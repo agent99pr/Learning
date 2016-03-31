@@ -1,0 +1,28 @@
+
+
+
+#The next problem is to define "equals" which treats a chooser like a "bit", 1of2 is "off" or "false" and 2of2 is "on" or "true".
+
+#equals a b takes two choosers and returns 2of2 (true) the choosers are equal and 1of2 (false) if they are not.
+
+#So equals 1of2 1of2 would return 2of2 and equals 1of2 2of2 would return 1of2.
+
+1of2 = \ x y . x
+2of2 = \ x y . y
+
+
+
+
+max = \ x y . x y x
+test20 = max 1of2 1of2
+#. 1of2 1of2 1of2
+# does 1of2                 should return 1of2
+
+test21 = max 1of2 2of2
+#. 1of2 2of2 1of2    does 2of2              should return 2of2
+
+test22 = max 2of2 1of2
+#. 2of2 1of2 2of2  does 2of2               should return 2of2
+
+test23 = max 2of2 2of2
+#. 2of2 2of2 2of2 does 2of2      should return 2of2
