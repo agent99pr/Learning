@@ -23,6 +23,8 @@ x yes no
 equal 1of2 2of2
 -----------
 
+
+
 eq3 = \ x y z . x (flip y) y wrong
 eq3 = \ x y z . x  y (flip y) wrong
 eq3 = \ x y z . x (flip y) all are wrong except 2 2 1
@@ -50,6 +52,12 @@ assignment:
 #eq3 a b c returns whether all 3 are equal
 
 #eq3 = \ x y z . x
+
+#eq3 = \ x y z . x (flip y) (equal y z) doesn't work
+#eq3 = \ x y z . x (flip y) (equal x y) doesn't work
+eq3 = \ x y z . x (flip y) (equal x z) doesn't work
+eq3 = \ x y z . x y (equal x z)
+
 #eq3 1of2 1of2 2of2    y
 #eq3 1of2 1of2 1of1  flip y
 #eq3 1of2 2of2 2of2  flip y
@@ -59,6 +67,25 @@ assignment:
 #eq3 2of2 2of2 2of2   y
 #eq3 2of2 2of2 1of2  flip y
 
+#eq3 = \ x y z . x (flip y) z
+
+#eq3 1of2 1of2 1of1  1 flip y
+#eq3 1of2 2of2 2of2   1 flip y
+#eq3 1of2 2of2 1of2  1 flip y
+#eq3 1of2 1of2 2of2   1 y
+#eq3 2of2 2of2 1of2  2 z
+#eq3 2of2 1of2 2of2   2 z
+#eq3 2of2 1of2 1of2   2 z
+#eq3 2of2 2of2 2of2   2 z
+
+#eq3 1of2 1of2 1of1  1 flip y
+#eq3 1of2 2of2 2of2   1 flip y
+#eq3 1of2 2of2 1of2  1 flip y
+#eq3 1of2 1of2 2of2   1 y
+#eq3 2of2 2of2 1of2  2 z
+#eq3 2of2 1of2 2of2   2 z
+#eq3 2of2 1of2 1of2   2 z
+#eq3 2of2 2of2 2of2   2 z
 
 
 
