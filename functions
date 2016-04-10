@@ -5,18 +5,20 @@
 flip = \ chooser . chooser 2of2 1of2
 
 equal = \ x y . x (flip y) y
-max = x y . y 1of2 2of2
+max = \ x y . y 1of2 2of2
+min = \ x y . x 1of2 y
+#same as mult
+
 
 
 mult = \ x y . x 1of2 y  #also min
 
-eq3 = \ x y z . x y (equal y z)
+eq3 = \ x y z . (equal x y) 1of2 (equal y z)
 
-eq3 1of2 1of2 2of2
-eq3 1of2 2of2 2of2
-eq3 1of2 2of2 1of2
-eq3 1of2 1of2 1of2
-eq3 2of2 1of2 2of2
-eq3 2of2 2of2 2of2
-eq3 2of2 1of2 1of2
-eq3 2of2 2of2 1of2
+
+
+maxormin = \ z x y . z min  max
+
+
+#this is a test:
+#eq3 1of2 1of2 2of2 returns 1of2

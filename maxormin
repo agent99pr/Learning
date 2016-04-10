@@ -1,0 +1,88 @@
+
+
+
+
+
+
+new problems
+eq3 a b c returns whether all 3 are equal
+mult is the same as min
+
+max = \ x y . y 1of2 2of2
+mult = \ x y . x 1of2 y  #also min
+max = \ x y . y 1of2 2of2
+min = \ x y . x 1of2 y  #same as mult
+
+maxOrMin which (chooser) a b returns, using which, returns max or min
+
+maxorMin 1of2 a b returns min a b
+maxorMin 2of2 a b returns max a b
+
+maxormin = \ whichfunction x y . x (mult x y)  (max x y)
+maxormin = \ z x y . z (mult x y)  (max x y)  returns \y . x
+maxormin = \ z x y . z (mult)  (max)  test returns (mult) which is correct
+maxormin = \ wf x y . wf (mult x y)  (max x y)  returns maxormin 1of2 1of2 2of2    ⇒    λy . x
+maxormin = \ 1of2 x y . 1of2 (mult x y)  (max x y)
+maxormin = \ 1of2 x y . 1of2 min  max  returns max or min correctly
+maxormin = \ z x y . z (min x y)  (max x y)
+
+maxormin = \ z x y . z ((min x y) x y)  ((max x y) x y)
+
+
+changed to y z, didn't help:
+max = \ y z . z 1of2 2of2
+min = \ y z . y 1of2 z  #same as mult
+maxormin = \ x y z . x (min y z)  (max y z)
+
+maxormin = \ z x y . z (x 1of2 y)  (y 1of2 2of2) returns number
+maxormin = \ z x y . z (min x y (x 1of2 y))  (max x y (y 1of2 2of2)) returns 1of2 1of2 2of2 \y . x
+maxormin = \ z x y . z ((min x y) (x 1of2 y))  ((max x y) (y 1of2 2of2)) returns 1of2 1of2 2of2    ⇒    λy . x
+maxormin = \ 1of2 x y . 1of2 min  max
+maxormin = \ z x y . z ((min x y) x y)  ((max x y) x y) works but does not return max or min, just number
+maxormin = \ z x y . z (min x y)   (max x y) z returns maxormin 1of2 1of2 2of2    ⇒    λy . x
+
+
+
+maxormin 1of2 1of2 2of2
+maxormin 1of2 1of2 1of2
+maxormin 1of2 2of2 1of2
+maxormin 1of2 2of2 2of2
+maxormin 2of2 1of2 2of2
+maxormin 2of2 1of2 1of2
+maxormin 2of2 2of2 1of2
+maxormin 2of2 2of2 2of2
+
+test min
+min 1of2 2of2
+
+
+max or min with 3 argument
+max = \ x y . y 1of2 2of2
+min same as mult
+mult = \ a b . a 1of2 b
+MaxOrMin = \ whichFunction a b . ???
+if whichfunction is 1of2 then use min
+if whichfunction is 2of2 then use max
+
+define the function maxormin for 3 after
+
+test = Maxormin 1of2 1of1 1of1
+picks which function to do and return answer
+1of2 will do min
+2of2 will do max
+
+maxormin = \ a b c
+
+max = \ x y . y 1of2 2of2
+mult = \ x y . x 1of2 y  #also min
+
+
+maxOrMin which (chooser) a b returns, using which, returns max or min
+
+maxorMin 1of2 a b returns min a b
+maxorMin 2of2 a b returns max a b
+
+maxormin = \ whichfunction x y . x (mult x y)  (max x y)
+
+maxormin 1of2 1of2 2of2
+maxormin =

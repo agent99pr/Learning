@@ -1,4 +1,28 @@
 
+april 6
+
+equal = \ x y . x (flip y) y
+
+eq3 = \ x y z .   (equal x y) 1of2 (equal y z)
+1  1 2  2 1
+1  1  2
+1  1  1
+2  1  1
+2  2  2
+1 2
+2 1
+
+does a = b
+if no then 1
+if yes then 2, do does b=c
+if no then 1
+if yes then 2
+
+eq3
+
+
+
+
 equal = \ x y .
 when x is 1of2
   when y is 1of2 should return 2of2
