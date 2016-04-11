@@ -40,6 +40,7 @@ maxormin = \ z x y . z ((min x y) (x 1of2 y))  ((max x y) (y 1of2 2of2)) returns
 maxormin = \ 1of2 x y . 1of2 min  max
 maxormin = \ z x y . z ((min x y) x y)  ((max x y) x y) works but does not return max or min, just number
 maxormin = \ z x y . z (min x y)   (max x y) z returns maxormin 1of2 1of2 2of2    ⇒    λy . x
+maxormin = \ z x y . z ((min x y) min x y)  ((max x y) max x y) returns  λy . x 1of2 y
 
 
 

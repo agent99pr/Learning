@@ -1,0 +1,34 @@
+
+After you've defined 1of3, 2of3, and 3of3, define next and prev.
+
+We're treating 1of3, 2of3, and 3of3 as related values again, just like with 1of2 and 2of2, so next takes a value and returns the one after it and prev takes a value and returns the one before it.
+
+"next 1of3" returns 2of3
+"next 2of3" returns 3of3
+"next 3of3" returns 1of3
+
+Prev is the opposite, so "prev 2of3" would return 1of3.
+
+If you look at "next 3of3", you'll see that it returns 1of3 so the values just wrap around and you can call next as many times as you like.  What would this return?
+
+next (next (next 1of3)))
+
+
+ 1of3 = \ x y z . x
+ 2of3 = \ x y z . y
+ 3of3 = \ x y z . z
+
+next = \ x y z . x (x y y) (y z z) (z x x) returns next 1of3 2of3 3of3    ⇒    λz_2 . 2of3
+
+next = \ x y z . x (x y y) (y z z) (z x x)
+1of3 y 2of3 3of3 1of3  x y z x
+next = \ x . x 2of3 3of3 1of3 
+prev = \ x . x 3of3 1of3 2of3
+2of3  z
+3of3 x
+1of3
+
+
+test
+next 1of3 2of3 3of3
+next 2of3
