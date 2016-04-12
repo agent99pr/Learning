@@ -21,7 +21,7 @@ next = \ x . x 2of3 3of3 1of3
 prev = \ x . x 3of3 1of3 2of3
 
 
-maxormin = \ z x y . z min  max
+maxMin = \ x y z . x (min y z)  (max y z)
 
 
 
