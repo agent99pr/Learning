@@ -23,6 +23,14 @@ prev = \ x . x 3of3 1of3 2of3
 
 maxMin = \ x y z . x (min y z)  (max y z)
 
+1of5 = \ a b c d e . a
+2of5 = \ a b c d e . b
+3of5 = \ a b c d e . c
+4of5 = \ a b c d e . d
+5of5 = \ a b c d e . e
+
+plus = \ a b . a (b 2of5 3of5 4of5 5of5 1of5) (b 3of5 4of5 5of5 1of5 2of5) (b 4of5 5of5 1of5 2of5 3of5) (b 5of5 1of5 2of5 3of5 4of5) (b 1of5 2of5 3of5 4of5 5of5)
+
 
 
 

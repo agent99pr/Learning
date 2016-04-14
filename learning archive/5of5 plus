@@ -1,0 +1,54 @@
+
+
+
+
+Here's another exercise....
+
+define 1of5 ... 5of5
+
+define plus a b so that it returns the sum of a and b (with wrap-around)
+
+"plus 2of5 3of5" would return 5of5
+
+"plus 3of5 4of5" would return 2of5
+
+1of5 = \ a b c d e . a
+2of5 = \ a b c d e . b
+3of5 = \ a b c d e . c
+4of5 = \ a b c d e . d
+5of5 = \ a b c d e . e
+
+plus = \ a b . a (b 2of5 3of5 4of5 5of5 1of5) (b 3of5 4of5 5of5 1of5 2of5) (b 4of5 5of5 1of5 2of5 3of5) (b 5of5 1of5 2of5 3of5 4of5) (b 1of5 2of5 3of5 4of5 5of5)
+
+test
+plus 1of5 2of5  3
+plus 2of5 4of5  1
+plus 1of5 5of5  1
+plus 1of5 3of5 4
+plus 5of5 2of5 2
+plus 4of5 1of5 5
+plus 2of5 3of5 5
+plus 3of5 4of5 2
+
+------
+
+plus = \ a b c d e . a   1of5 2of5 3of5 4of5 5of5 1of5 2of5 3of5 4of5 5of5 b 1of5 2of5 3of5 4of5 5of5
+
+2of5 3of5
+1 2 3 4 5  2 3 4 5 1
+2 3 4 5 1  3 4 5 1 2
+3 4 5 1 2   4 5 1 2 3
+4 5 1 2 3  5 1 2 3 4
+5 1 2 3 4  1 2 3 4 5
+1 2
+
+a2 2 3 4 5 1    a3  3 4 5 1 2  5
+a3 2 3 4 5 1    a4  3 4 5 1 2  1
+a1 2 3 4 5 1    a2  3 4 5 1 2    4
+
+
+ (a2 1 2 3 4 5 )  b3 2 3 4 5 1  b3 2 3 4 5 1  b3 2 3 4 5 1  b3 2 3 4 5 1
+2 3 4 5 1  3 4 5 1 2
+3 4 5 1 2   4 5 1 2 3
+4 5 1 2 3  5 1 2 3 4
+5 1 2 3 4  1 2 3 4 5
