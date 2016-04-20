@@ -23,6 +23,10 @@ prev = \ x . x 3of3 1of3 2of3
 
 maxMin = \ x y z . x (min y z)  (max y z)
 
+true = \ a b . a
+false = \ a b . b
+
+
 1of5 = \ a b c d e . a
 2of5 = \ a b c d e . b
 3of5 = \ a b c d e . c
