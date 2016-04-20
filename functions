@@ -31,8 +31,13 @@ maxMin = \ x y z . x (min y z)  (max y z)
 
 plus = \ a b . a (b 2of5 3of5 4of5 5of5 1of5) (b 3of5 4of5 5of5 1of5 2of5) (b 4of5 5of5 1of5 2of5 3of5) (b 5of5 1of5 2of5 3of5 4of5) (b 1of5 2of5 3of5 4of5 5of5)
 
+minus5 = \ a b . a (b 5of5 4of5 3of5 2of5 1of5)(b 1of5 5of5 4of5 3of5 2of5)(b 2of5 1of5 5of5 4of5 3of5)(b 3of5 2of5 1of5 5of5 4of5)(b 4of5 3of5 2of5 1of5 5of5)
 
+isLess5 = \ a b . a (b 2of2 1of2 1of2 1of2 1of2)(b 2of2 2of2 1of2 1of2 1of2)(b 2of2 2of2 2of2 1of2 1of2)(b 2of2 2of2 2of2 2of2 1of2)(b 2of2 2of2 2of2 2of2 2of2)
 
+isEqual5 = \ a b . a   (b 1of2 2of2 2of2 2of2 2of2)(b 2of2 1of2 2of2 2of2 2of2)(b 2of2 2of2 1of2 2of2 2of2)(b 2of2 2of2 2of2 1of2 2of2) (b 2of2 2of2 2of2 2of2 1of2)
+
+isGreater5 = \ a b . a (b 2of2 2of2 2of2 2of2 2of2)(b 2of2 1of2 1of2 1of2 1of2)(b 1of2 1of2 2of2 2of2 2of2)(b 1of2 1of2 1of2 2of2 2of2) (b 1of2 1of2 1of2 1of2 2of2)
 
 #this is a test:
 #eq3 1of2 1of2 2of2 returns 1of2

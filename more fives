@@ -1,0 +1,56 @@
+
+
+plus = \ a b . a (b 2of5 3of5 4of5 5of5 1of5) (b 3of5 4of5 5of5 1of5 2of5) (b 4of5 5of5 1of5 2of5 3of5) (b 5of5 1of5 2of5 3of5 4of5) (b 1of5 2of5 3of5 4of5 5of5)
+
+n1of5 = \a b c d e . a
+n2of5 = \a b c d e . b
+n3of5 = \a b c d e . c
+n4of5 = \a b c d e . d
+n5of5 = \a b c d e . e
+
+inc = \ a . a 2of5 3of5 4of5 5of5 1of5
+dec = \ a . a 5of5 1of5 2of5 3of5 4of5
+
+plus5 = \ a b . a (plus5 (inc a) (dec b)) (plus5 (inc a) (dec b)) (plus5 (inc a) (dec b)) (plus5 (inc a) (dec b)) b
+eq3 = \ x y z . (equal x y) 1of2 (equal y z)
+
+Yes, 2of5 means it's the second value of 5.  1of5 represents 1, 2of5 represents 2, etc.
+
+isLess5 1of5 5of5 should return true because 1of5 is less than 5of5.
+isEqual5 a b means a == b.  So isEqual5 2of5 3of5 should return false because they are not equal.
+
+max = \ x y . y 1of2 2of2
+min = \ x y . x 1of2 y
+
+define these functions that operate on 5-valued choosers:
+minus5 (returns an Nof5 value)
+isLess5 (returns 1of2 or 2of2)
+isEqual5 (returns 1of2 or 2of2)
+isGreater5 (returns 1of2 or 2of2)
+
+isLess5 = \ a b . (b 5of5 4of5 3of5 2of5 1of5)(b 1of5 5of5 4of5 3of5 2of5)(b 2of5 1of5 5of5 4of5 3of5)(b 3of5 2of5 1of5 5of5 4of5)(b 4of5 3of5 2of5 1of5 5of5)
+3 4 1of2  1  (b 2of2 1of2 1of2 1of2 1of2)(b 2of2 2of2 1of2 1of2 1of2)(b 2of2 2of2 2of2 1of2 1of2)(b 2of2 2of2 2of2 2of2 1of2)(b 2of2 2of2 2of2 2of2 2of2)
+isLess5 = \ a b . a (b 2of2 1of2 1of2 1of2 1of2)(b 2of2 2of2 1of2 1of2 1of2)(b 2of2 2of2 2of2 1of2 1of2)(b 2of2 2of2 2of2 2of2 1of2)(b 2of2 2of2 2of2 2of2 2of2)
+2 4
+isEqual5 = \ a b . a   (b 1of2 2of2 2of2 2of2 2of2)(b 2of2 1of2 2of2 2of2 2of2)(b 2of2 2of2 1of2 2of2 2of2)(b 2of2 2of2 2of2 1of2 2of2) (b 2of2 2of2 2of2 2of2 1of2)
+isGreater5 = \ a b . a   (b 2of2 2of2 2of2 2of2 2of2)(b 2of2 1of2 1of2 1of2 1of2)(b 1of2 1of2 2of2 2of2 2of2)(b 1of2 1of2 1of2 2of2 2of2) (b 1of2 1of2 1of2 1of2 2of2)
+ise5 a b .  a   (b 1of2 2of2 2of2 2of2 2of2)(b 2of2 1of2 2of2 2of2 2of2)(b 2of2 2of2 1of2 2of2 2of2)(b 2of2 2of2 2of2 1of2 2of2) (b 2of2 2of2 2of2 2of2 1of2)
+# plus minus5 = \ a b . a (b 2of5 3of5 4of5 5of5 1of5) (b 3of5 4of5 5of5 1of5 2of5) (b 4of5 5of5 1of5 2of5 3of5) (b 5of5 1of5 2of5 3of5 4of5) (b 1of5 2of5 3of5 4of5 5of5)
+
+minus5 = \ a b . a  (b 1of5 5of5 4of5 3of5 2of5) (b 2of5 1of5 5of5 4of5 3of5) (b 3of5 2of5 1of5 5of5 4of5) (b 4of5 3of5 2of5 1of5 5of5)  (b 5of5 4of5 3of5 2of5 1of5)
+
+plus = \ a b . a (b 2of5 3of5 4of5 5of5 1of5) (b 3of5 4of5 5of5 1of5 2of5) (b 4of5 5of5 1of5 2of5 3of5) (b 5of5 1of5 2of5 3of5 4of5) (b 1of5 2of5 3of5 4of5 5of5)
+doesn't work minus5 = \ a b . a  (b 1of5 5of5 4of5 3of5 2of5) (b 2of5 1of5 5of5 4of5 3of5) (b 3of5 2of5 1of5 5of5 4of5) (b 4of5 3of5 2of5 1of5 5of5)  (b 5of5 4of5 3of5 2of5 1of5)
+doesn't work minus5 = \ a b . a (b 5of5 4of5 3of5 2of5 1of5)(b 4of5 3of5 2of5 1of5 5of5)(b 3of5 2of5 1of5 5of5 4of5)(b 2of5 1of5 5of5 4of5 3of5)(b 1of5 5of5 4of5 3of5 2of5)
+ minus5 = \ a b . a (b 5of5 4of5 3of5 2of5 1of5)(b 1of5 5of5 4of5 3of5 2of5)(b 2of5 1of5 5of5 4of5 3of5)(b 3of5 2of5 1of5 5of5 4of5)(b 4of5 3of5 2of5 1of5 5of5)
+4 2  1 2 3 5
+5 3  4 3 2 1 5
+3 1  2 3 4 5 1
+2 1  1 2 3 4 5
+5 2 4 3 2 1 5
+3 2  2 1 5 4 3
+
+3 2 2
+5-2 4
+4-1 4
+4-2 3
