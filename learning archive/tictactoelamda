@@ -1,0 +1,32 @@
+
+createTriple = \ 1 2 3 . \ accessor . accessor 1 2 3
+
+body is whats after the dot
+
+every function has a slash, a dot and at least one argument and then a dot and the body
+
+
+
+#The 'board' data structure is a triple of triple of squares
+
+#squares
+empty
+x =
+0 =
+
+# locations - 3 valued chooser
+1=
+2=
+3=
+
+#triples
+createTriple = ???
+drgetTripleFirst = / triple . ???
+getTripleSecond / triple . ???
+getTripleThird  = / triple . ???
+createBoard = creates a new board of empty squares
+
+#gets the piece at a location
+getPiece =  \ board row colun . ???
+# ceate a new board with a piece at the given point
+setPiece = \ board row column newPiece.

@@ -1,0 +1,60 @@
+createPerson = \ name age . \ accessor . accessor name age
+         func args     ^------body------------------^
+         person is a two argument function that returns a function of one argument
+         the returned function takes an "accessor" function as its one argument
+         accessor is a function of two arguments
+         when you call person's returned function with an accessor you provide, it calls your accessor with name and age
+
+p1 = createPerson bob 54 <--- p1 is a one-argument function!
+p2 = createPerson mary 73
+
+getName = \ aPerson . aPerson 1of2
+getAge = \ aPerson . aPerson 2of2
+body is after the dot
+arguments are between slash and dot
+
+
+#### Representing programs as expressions ####
+
+## THIS PROGRAM
+
+createPerson = \ name age . \ accessor . accessor name age
+p1 = createPerson bob 54 <--- p1 is a one-argument function!
+p2 = createPerson mary 73
+getName = \ aPerson . ????
+bubba = a b d e
+q = z
+
+getName p1
+
+
+## IS THE SAME AS THIS EXPRESSION
+
+(\ createPerson .
+  (\ p1 .
+    (\ p2 .
+      (\ getName .
+        (\ bubba .
+          (\ q . getName p1) z
+        ) (a b d e)
+      ) (\ aPerson . ????)
+    ) (createPerson mary 73)
+  ) (createPerson bob 54)
+) \ name age . \ accessor . accessor name age
+
+May 2 2016
+
+getName = \ aPerson . aPerson 1of2
+getAge = \ aPerson . aPerson 2of2
+body is after the dot
+arguments are between slash and dot
+
+createTriple = \ 1 2 3 . \ accessor . accessor 1 2 3
+
+body is whats after the dot
+
+every function has a slash, a dot and at least one argument and then a dot and the body
+
+
+
+createTriple a b c

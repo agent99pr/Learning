@@ -1,5 +1,8 @@
 
 
+empty = \ x . x (||)
+
+
 1of2 = \ x y . x
 2of2 = \ x y . y
 flip = \ chooser . chooser 2of2 1of2

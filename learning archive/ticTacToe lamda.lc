@@ -1,0 +1,49 @@
+# Defining a Tic Tac Toe game in Lambda Calculus
+
+# squares -- 3-valued choosers
+
+empty = \ a b c . ???
+x = \ a b c . ???
+o = \ a b c . ???
+
+# locations -- 3-valued choosers
+
+location1 = \ a b c . ???
+location2 = \ a b c . ???
+location3 = \ a b c . ???
+
+# The "board" data structure
+#   A triple of triples of squares
+
+# triples -- data structure that stores 3 things
+#    lets you use a location to retrieve them
+
+createTriple = \ a b c . ???
+
+# createBoard creates a new board of empty squares
+createBoard = ???
+
+# gets the piece at a row and column location
+getPiece = \ board row column . ???
+
+# create a new board with a piece at the given row and column location
+setPiece = \ board row column piece . ???
+
+.....
+.....
+
+# The game
+
+# games have a player, whose turn it is, and a board
+startGame = ???
+
+# move put the current player's piece at row, column
+move = \ game row column . ???
+
+# game over?
+#  returns whether the game is over
+gameOver = \ game . ???
+
+# Who won?
+#   returns who won the game, x, o, or empty
+whoWon = \ game . ????
