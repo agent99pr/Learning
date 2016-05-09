@@ -2,16 +2,17 @@
 
 
 
-
-
+TL = \ a b c . 1of3 |x|  ||  ||
+top = a b c . 1of3  |x|  ||  ||
+etl = \ a b c . 1of3 || |x| |o|
 
 1of3 = \ a b c . a
 2of3 = \ a b c . b
 3of3 = \ a b c . c
 
-empty = \ a b c . 10f3 || |x| |o|
-x = \ a b c . 20f3 || |x| |o|
-o = \ a b c . 30f3 || |x| |o|
+empty = \ a b c . 1of3 || |x| |o|
+x = \ a b c . 2of3 || |x| |o|
+o = \ a b c . 3of3 || |x| |o|
 
 
 true = \ a b . a

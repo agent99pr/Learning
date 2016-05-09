@@ -10,12 +10,13 @@ empty = \ a b c . ???
 x = \ a b c . ???
 o = \ a b c . ???
 
-empty = \ a b c . 10f3 || |x| |o|
-x = \ a b c . 20f3 || |x| |o|
-o = \ a b c . 30f3 || |x| |o|
+all work but return the same thing independent of what a b c is
+empty = \ a b c . 1of3 || |x| |o|
+x = \ a b c . 2of3 || |x| |o|
+o = \ a b c . 3of3 || |x| |o|
 
 
-
+doesn't work, says nan not a function:
 xlocation1 = \ a b c . 1of3 x || ||
 xlocation2 = \ a b c . 2of3 || x ||
 xlocation3 = \ a b c . 3of3 || || x
@@ -24,15 +25,15 @@ olocation1 = \ a b c . 1of3 o || ||
 olocation2 = \ a b c . 2of3 || o ||
 olocation3 = \ a b c . 3of3 || || o
 
-topLeft 
-topMiddle
-topRight
-middleLeft
-middleMiddle
-middleRight
-bottomLeft
-bottomMiddle
-bottomRight
+topLeft = \ a b c . 1of3 |x|  ||  ||
+topMiddle = \ a b c . 1of3  ||  |x|  ||
+topRight = \ a b c . 1of3   ||  ||  |x|
+middleLeft = \ a b c . 1of3 |x|  || ||
+middleMiddle = \ a b c . 1of3 |x|  || ||
+middleRight = \ a b c . 1of3 |x|  || ||
+bottomLeft = \ a b c . 1of3 |x|  || ||
+bottomMiddle = \ a b c . 1of3 |x|  || ||
+bottomRight = \ a b c . 1of3 |x|  || ||
 
 
 # locations -- 3-valued choosers
